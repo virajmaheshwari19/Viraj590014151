@@ -2,26 +2,26 @@ import java.util.Scanner;
 
 public class ArraySum {
     public static void main(String[] args) {
-        int sum, sum_array = 0;
-        Scanner s = new Scanner(System.in);
-
-        System.out.println("Enter the sum:");
-        sum = s.nextInt();
-
-        int arr[] = new int[5];
-        System.out.println("Enter elements:");
-
-        for (int i = 0; i < 5; i++) {
-            arr[i] = s.nextInt();
-            sum_array += arr[i];
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("How many numbers? ");
+        int size = sc.nextInt();
+        
+        int[] arr = new int[size];
+        int total = 0; 
+        
+        System.out.println("Enter your values:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt();
         }
-
-        if (sum == sum_array) {
-            System.out.println("Yes, Correct");
-        } else {
-            System.out.println("No, Incorrect");
+        
+        for (int i = 0; i < size; i++) {
+            total = total + arr[i];
         }
-
-        s.close();
+        
+        System.out.println("The final sum is: " + total);
+        
+        sc.close();
     }
 }
